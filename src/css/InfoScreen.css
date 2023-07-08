@@ -1,0 +1,44 @@
+.info-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(74, 147, 255);
+}
+
+.info-content {
+  margin-bottom: 20px;
+  color: white;
+}
+.info-h2 {
+  color: orange;
+  text-decoration: underline;
+}
+.info-button {
+  background-color: white;
+  color: rgb(74, 147, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.info-button:hover {
+  background-color: rgb(156, 192, 248);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .info-container {
+    padding: 20px;
+    font-size: 1.8rem;
+  }
+
+  .info-button {
+    font-size: 1.5rem;
+  }
+}
