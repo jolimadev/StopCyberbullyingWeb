@@ -29,13 +29,13 @@ Este proyecto se distribuye bajo la Licencia MIT. Si utilizas este código como 
 Saludos!
 
 
+![image](https://github.com/jolimadev/StopCyberbullyingWeb/assets/84105167/bfa6711c-3042-41f1-b4b9-a4026cc19cc1)
+![image](https://github.com/jolimadev/StopCyberbullyingWeb/assets/84105167/12cb4a01-22ca-4d35-931f-488bd9248be9)
 
-![image](https://github.com/jolimadev/StopCyberbullyingWeb/assets/84105167/d3493b9e-3af2-4445-9073-94c20ea216c4)
 
 
-![image](https://github.com/jolimadev/StopCyberbullyingWeb/assets/84105167/24d390a5-e78d-4e7a-aff4-01d0000aa70b)
 
-![image](https://github.com/jolimadev/StopCyberbullyingWeb/assets/84105167/838ca77d-9358-44e4-9c48-b9f29d2d17a2)
+
 
 
 
