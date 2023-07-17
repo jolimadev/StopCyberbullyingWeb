@@ -4,9 +4,9 @@ import "../css/InfoScreen.css";
 
 export default function InfoScreen() {
   return (
-    <div className="container p-5 bg-info border rounded shadow">
+    <div className="container p-5 border rounded shadow" style={{ backgroundColor: "#599eee" }}>
       <h2 className="text-white text-center text-decoration-underline mb-5">
-        Links y canales para reportar o capacitarse mas al respecto{" "}
+        Links y canales para reportar o capacitarse más al respecto{" "}
       </h2>
 
       <div className="container">
