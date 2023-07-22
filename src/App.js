@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import QuizContainer from "./Componentes/QuizContainer";
 import InfoScreen from "./Componentes/InfoScreen";
+import ModalInicio from "./Componentes/ModalInicio";
 // import './css/App.css';
 
 const App = () => {
@@ -21,7 +22,8 @@ const App = () => {
         </h1>
 
         {/* Menú de navegación */}
-        <nav>
+        <nav className="ml-2"
+        >
           <ul
             style={{
               display: "flex",
@@ -31,13 +33,20 @@ const App = () => {
             }}
           >
             <li>
-              <a href="/info" className="text-white">
+              <a
+                href="/info"
+                path="/info"
+                element={<InfoScreen />}
+                className="text-white"
+              >
                 Información
               </a>
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/juanolima/?locale=en_US" target="_blank" rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/juanolima/?locale=en_US"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white"
               >
                 Contacto
@@ -46,7 +55,7 @@ const App = () => {
           </ul>
         </nav>
       </div>
-
+      <ModalInicio />
       {/* Contenido de la aplicación */}
       <div
         className="container-fluid bg-primary d-flex align-items-center justify-content-center"
