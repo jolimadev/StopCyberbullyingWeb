@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import QuizContainer from "./Componentes/QuizContainer";
 import InfoScreen from "./Componentes/InfoScreen";
 import ModalInicio from "./Componentes/ModalInicio";
-// import './css/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
@@ -68,6 +69,39 @@ const App = () => {
           </Routes>
         </Router>
       </div>
+
+   {/* Footer */}
+   <footer
+        style={{
+          backgroundColor: "#448ada",
+          color: "white",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
+        <span>Made by @jolimadev</span>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/juanolima/?locale=en_US"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <i className="bi bi-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/jolimadev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white ml-3"
+          >
+            <i className="bi bi-instagram"></i>
+          </a>
+        </div>
+      </footer>
+
     </div>
   );
 };
