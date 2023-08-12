@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import '../css/QuizContainer.css';
+
 
 const QuizContainer = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const preguntas = [
     {
       pregunta: "¿Qué es el cyberbullying?",
@@ -59,14 +61,16 @@ const QuizContainer = () => {
         "Para protegerte del cyberbullying, es importante no compartir información personal en línea y bloquear a personas desconocidas que puedan acosarte.",
     },
   ];
-  //Logica para setear las respuestas
   const handleAnswer = (respuestaSeleccionada) => {
+    setSelectedOption(respuestaSeleccionada);
     setShowExplanation(true);
     setTimeout(() => {
       setCurrentQuestion(currentQuestion + 1);
+      setSelectedOption(null); // Reinicia la selección de opción después de avanzar
       setShowExplanation(false);
     }, 2500);
   };
+  
 
   const renderizarQuiz = () => {
     if (currentQuestion >= preguntas.length) {
@@ -92,14 +96,14 @@ const QuizContainer = () => {
     return (
       <div className="container">
         {currentQuestion < preguntas.length - 1 && (
-          <h2 className="text-center mt-4">
+          <h2 className="text-center mt-4 text-white">
             Por favor, responde las siguientes preguntas:
           </h2>
         )}
         {currentQuestion === preguntas.length - 1 && (
           <h2 className="text-center mt-4">Última pregunta</h2>
         )}
-        <h2 className="text-center mt-5 text-decoration-underline">
+        <h2 className="text-center mt-5 text-decoration-underline ">
           Pregunta {currentQuestion + 1}
         </h2>
         <p className="text-center fw-bold fs-2 mb-4 ">{pregunta}</p>
@@ -111,8 +115,10 @@ const QuizContainer = () => {
                   type="radio"
                   name="opcion"
                   value={index} // Asigna el valor del índice como el valor de la respuesta
-                  onChange={(event) => handleAnswer(event.target.value)} // Llama a la función handleAnswer con el valor seleccionado
+                  onChange={(event) => handleAnswer(event.target.value)} 
                   disabled={showExplanation}
+                  checked={selectedOption === index} // esto me sirve para la seleccion de opciones
+
                 />
                 {opcion}
               </label>
@@ -127,7 +133,7 @@ const QuizContainer = () => {
     if (showExplanation && currentQuestion < preguntas.length) {
       const { explicacion } = preguntas[currentQuestion];
       return (
-        <div className="container text-center">
+        <div className="container text-center text-muted">
           <h3 className="text-decoration-underline">Explicación:</h3>
           <p className="fw-bold">{explicacion}</p>
         </div>
@@ -138,10 +144,10 @@ const QuizContainer = () => {
 
   return (
     <div
-      className="container p-5 border rounded shadow"
+      className="container p-5 border rounded shadow text-center"
       style={{ backgroundColor: "#599eee" }}
     >
-      {/* <h1 className="titulo-quiz text-white">Campaña contra el #CYBERBULLYING</h1> */}
+      
       {renderizarQuiz()}
       {renderizarExplicacion()}
     </div>
